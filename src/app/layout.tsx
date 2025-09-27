@@ -3,7 +3,8 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MainLayout from "../components/MainLayout";
-import Banner from "../components/Banner";
+import AuthProvider from "../components/AuthProvider";
+import ScrollTop from "../components/ScrollTop";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Navbar></Navbar>
-        <Banner></Banner>
-        <MainLayout>{children}</MainLayout>
-        <Footer></Footer>
+      <body className="overflow-x-hidden">
+        <AuthProvider>
+          <Navbar></Navbar>
+          <MainLayout>{children}</MainLayout>
+          <Footer></Footer>
+          <ScrollTop></ScrollTop>
+        </AuthProvider>
       </body>
     </html>
   );
