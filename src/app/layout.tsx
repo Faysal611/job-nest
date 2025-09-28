@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import MainLayout from "../components/MainLayout";
 import AuthProvider from "../components/AuthProvider";
 import ScrollTop from "../components/ScrollTop";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,6 +25,7 @@ export default function RootLayout({
           <MainLayout>{children}</MainLayout>
           <Footer></Footer>
           <ScrollTop></ScrollTop>
+          <Toaster position="top-right"></Toaster>
         </AuthProvider>
       </body>
     </html>
